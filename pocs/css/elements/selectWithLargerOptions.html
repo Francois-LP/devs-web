@@ -1,0 +1,32 @@
+<!--
+object :		Create a select element having a limited width and some options larger according to its content
+tutorial :	https://stackoverflow.com/questions/36676701/set-width-at-option-of-select-box
+sources :		https://jsfiddle.net/3bsbcqfz/
+-->
+
+<!DOCTYPE html>
+<html>
+
+<body>
+	<style>
+select,
+option {
+	width: 250px;
+}
+
+option {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+	</style>
+
+	<body>
+		<select>
+			<option>Select your University</option>
+			<option>Bangladesh University of Engineering and Technology</option>
+			<option>Mawlana Bhashani Science and Technology University</option>
+		</select>
+	</body>
+</body>
+
+</html>
