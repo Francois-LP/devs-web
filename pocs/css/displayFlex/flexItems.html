@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+/* style for content display */
+ul li {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 20px;
+  padding-top: 50px;
+}
+
+li:first-of-type {
+  padding-top: 25px;
+}
+
+ul li ul li {
+  font-weight: normal;
+  font-style: italic;
+  padding-top: 35px;
+}
+
+/* style for flex containers */
+.flex-container {
+  display: flex;
+  align-items: stretch;
+  background-color: #f1f1f1;
+}
+
+.flex-container>div {
+  background-color: DodgerBlue;
+  color: white;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+  </style>
+</head>
+
+<body>
+  <h1>CSS Flex Items</h1>
+
+  <ul>
+    <li>order property
+      <div class="flex-container">
+        <div style="order: 3">1</div>
+        <div style="order: 2">2</div>
+        <div style="order: 4">3</div>
+        <div style="order: 1">4</div>
+      </div>
+    </li>
+
+    <li>flex-grow property
+      <div class="flex-container">
+        <div style="flex-grow: 1">1</div>
+        <div style="flex-grow: 1">2</div>
+        <div style="flex-grow: 8">3</div>
+      </div>
+    </li>
+
+    <li>flex-shrink property
+      <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div style="flex-shrink: 0">3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+      </div>
+    </li>
+
+    <li>flex-basis property
+      <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div style="flex-basis: 200px">3</div>
+        <div>4</div>
+      </div>
+    </li>
+
+    <li>flex property
+      <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div style="flex: 0 0 200px">3</div>
+        <div>4</div>
+      </div>
+    </li>
+
+    <li>align-self property
+      <ul>
+        <li>example 1 (align the third flex item in the middle of the container)</li>
+        <div class="flex-container" style="height: 200px;">
+          <div>1</div>
+          <div>2</div>
+          <div style="align-self: center">3</div>
+          <div>4</div>
+        </div>
+        <li>example 2 <small>(align the second flex item at the top of the container, and the third flex item at the
+            bottom of the container)</small></li>
+        <div class="flex-container" style="height: 200px;">
+          <div>1</div>
+          <div style="align-self: flex-start">2</div>
+          <div style="align-self: flex-end">3</div>
+          <div>4</div>
+        </div>
+      </ul>
+    </li>
+
+  </ul>
+</body>
+
+</html>

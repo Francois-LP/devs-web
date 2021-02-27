@@ -1,0 +1,408 @@
+<!--
+
+
+
+	Properties for the Parent (flex container)
+
+	 - display : flex / inline-flex
+	 - flex-direction : row | row-reverse | column | column-reverse;
+	 - flex-wrap :  flex-wrap: nowrap | wrap | wrap-reverse;
+	 - flex-flow
+	 - justify-content : flex-start | flex-end | center | space-between | space-around | space-evenly | start | end | left | right ... + safe | unsafe;
+	 - align-items : stretch | flex-start | flex-end | center | baseline | first baseline | last baseline | start | end | self-start | self-end + ... safe | unsafe;
+	 - align-content
+
+	Properties for the Children (flex items)
+	 - order
+	 - flex-grow
+	 - flex-shrink
+	 - flex-basis
+	 - flex
+	 - align-self
+
+
+
+
+
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+/* style for content display */
+ul li {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 20px;
+  padding-top: 60px;
+}
+
+li:first-of-type {
+  padding-top: 25px;
+}
+
+ul li ul li {
+  font-weight: normal;
+  font-style: italic;
+  padding-top: 35px;
+}
+
+/* style for flex containers */
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: DodgerBlue;
+}
+
+.flex-container>div {
+  background-color: #f1f1f1;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+
+/* style for flex container centering */
+.flex-container-centering {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  background-color: DodgerBlue;
+}
+
+.flex-container-centering>div {
+  background-color: #f1f1f1;
+  color: white;
+  width: 100px;
+  height: 100px;
+}
+  </style>
+</head>
+
+<body>
+  <h1>CSS Flex Container</h1>
+  <ul>
+    <li>Parent Element (Container)
+      <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </div>
+    </li>
+
+    <li>The flex-direction Property
+      <ul>
+        <li>column
+          <div class="flex-container" style="flex-direction: column;">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+          </div>
+        </li>
+
+        <li>column-reverse
+          <div class="flex-container" style="flex-direction: column-reverse;">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+          </div>
+        </li>
+
+        <li>row
+          <div class="flex-container" style="flex-direction: row;">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+          </div>
+        </li>
+
+        <li>row-reverse
+          <div class="flex-container" style="flex-direction: row-reverse;">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+          </div>
+        </li>
+      </ul>
+    </li>
+
+    <li>The flex-wrap property
+      <ul>
+        <li>wrap
+          <div class="flex-container" style="flex-wrap: wrap;">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+          </div>
+        </li>
+
+        <li>nowrap
+          <div class="flex-container" style="flex-wrap: nowrap;">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+          </div>
+        </li>
+
+        <li>wrap-reverse
+          <div class="flex-container" style="flex-wrap: wrap-reverse;">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+          </div>
+        </li>
+      </ul>
+    </li>
+
+    <li>The flex-flow Property
+      <div class="flex-container" style="flex-flow: row wrap;">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+      </div>
+    </li>
+
+    <li>The justify-content property
+      <ul>
+        <li>center
+          <div class="flex-container" style="justify-content: center;">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+          </div>
+        </li>
+
+        <li>flex-start
+          <div class="flex-container" style="justify-content: flex-start;">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+          </div>
+        </li>
+
+        <li>flex-end
+          <div class="flex-container" style="justify-content: flex-end;">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+          </div>
+        </li>
+
+        <li>space-around
+          <div class="flex-container" style="justify-content: space-around;">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+          </div>
+        </li>
+
+        <li>space-between
+          <div class="flex-container" style="justify-content: space-between;">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+          </div>
+        </li>
+      </ul>
+    </li>
+
+    <li>The align-items property
+      <ul>
+        <li>center
+          <div class="flex-container" style="height: 200px; align-items: center;">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+          </div>
+        </li>
+
+        <li>flex-start
+          <div class="flex-container" style="height: 200px; align-items: flex-start;">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+          </div>
+        </li>
+
+        <li>flex-end
+          <div class="flex-container" style="height: 200px; align-items: flex-end;">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+          </div>
+        </li>
+
+        <li>stretch
+          <div class="flex-container" style="height: 200px; align-items: stretch;">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+          </div>
+        </li>
+
+        <li>baseline
+          <div class="flex-container" style="height: 200px; align-items: baseline;">
+            <div><h1>1</h1></div>
+            <div><h6>2</h6></div>
+            <div><h3>3</h3></div>
+            <div><small>4</small></div>
+          </div>
+        </li>
+      </ul>
+    </li>
+
+    <li>The align-content property
+      <ul>
+        <li>space-between
+          <div class="flex-container" style="height: 400px; flex-wrap: wrap; align-content: space-between;">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+          </div>
+        </li>
+
+        <li>space-around
+          <div class="flex-container" style="height: 400px; flex-wrap: wrap; align-content: space-around;">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+          </div>
+        </li>
+
+        <li>stretch
+          <div class="flex-container" style="height: 400px; flex-wrap: wrap; align-content: stretch;">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+          </div>
+        </li>
+
+        <li>center
+          <div class="flex-container" style="height: 400px; flex-wrap: wrap; align-content: center;">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+          </div>
+        </li>
+
+        <li>flex-start
+          <div class="flex-container" style="height: 400px; flex-wrap: wrap; align-content: flex-start;">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+          </div>
+        </li>
+
+        <li>flex-end
+          <div class="flex-container" style="height: 400px; flex-wrap: wrap; align-content: flex-end;">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+          </div>
+        </li>
+      </ul>
+    </li>
+
+    <li>Perfect centering
+      <div class="flex-container-centering">
+        <div></div>
+      </div>
+    </li>
+
+  </ul>
+</body>
+
+</html>
