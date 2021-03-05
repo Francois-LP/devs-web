@@ -2,63 +2,46 @@
 <html>
 
 <head>
+  <link rel="stylesheet" href="../../assets/elementsList.css" />
   <style>
-/* style for content display */
-ul li {
-  font-size: 20px;
-  font-weight: bold;
-  padding: 20px;
-  padding-top: 60px;
-}
+    /* style for flex containers */
+    .flex-container {
+      display: flex;
+      flex-wrap: nowrap;
+      background-color: DodgerBlue;
+      margin-top: 20px;
+    }
 
-li:first-of-type {
-  padding-top: 25px;
-}
+    .flex-container>div {
+      background-color: #f1f1f1;
+      width: 100px;
+      margin: 10px;
+      text-align: center;
+      line-height: 75px;
+      font-size: 30px;
+    }
 
-ul li ul li {
-  font-weight: normal;
-  font-style: italic;
-  padding-top: 35px;
-}
+    /* style for flex container centering */
+    .flex-container-centering {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 300px;
+      background-color: DodgerBlue;
+    }
 
-/* style for flex containers */
-.flex-container {
-  display: flex;
-  flex-wrap: nowrap;
-  background-color: DodgerBlue;
-  margin-top: 20px;
-}
-
-.flex-container>div {
-  background-color: #f1f1f1;
-  width: 100px;
-  margin: 10px;
-  text-align: center;
-  line-height: 75px;
-  font-size: 30px;
-}
-
-/* style for flex container centering */
-.flex-container-centering {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 300px;
-  background-color: DodgerBlue;
-}
-
-.flex-container-centering>div {
-  background-color: #f1f1f1;
-  color: white;
-  width: 100px;
-  height: 100px;
-}
+    .flex-container-centering>div {
+      background-color: #f1f1f1;
+      color: white;
+      width: 100px;
+      height: 100px;
+    }
   </style>
 </head>
 
 <body>
   <h1>CSS Flex Container</h1>
-  <ul>
+  <ul class="examples">
     <li>Parent Element (Container)
       <div class="flex-container">
         <div>1</div>
@@ -255,9 +238,15 @@ ul li ul li {
 
         <li>baseline
           <div class="flex-container" style="height: 200px; align-items: baseline;">
-            <div><h1>1</h1></div>
-            <div><h6>2</h6></div>
-            <div><h3>3</h3></div>
+            <div>
+              <h1>1</h1>
+            </div>
+            <div>
+              <h6>2</h6>
+            </div>
+            <div>
+              <h3>3</h3>
+            </div>
             <div><small>4</small></div>
           </div>
         </li>

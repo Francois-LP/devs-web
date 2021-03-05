@@ -8,7 +8,7 @@
 1. [Code tricks](#tricks)
 1. [Additional links](#additional-links)
 
-### 1. Examples of use 
+### 1. Examples of use
 - [Flex Container](flexContainer.html)
     - flex-direction
     - flex-wrap
