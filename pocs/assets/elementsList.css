@@ -1,0 +1,17 @@
+/* style for content display */
+ul.examples li {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 20px;
+  padding-top: 60px;
+}
+
+ul.examples li:first-of-type {
+  padding-top: 25px;
+}
+
+ul.examples li ul li {
+  font-weight: normal;
+  font-style: italic;
+  padding-top: 35px;
+}
