@@ -1,0 +1,65 @@
+<!--
+Tutorial : https://www.youtube.com/watch?v=pi-jnnNFTiQ
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="shortcut icon" href="#">
+  <style>
+    :root {
+      /* define global variable */
+      --main-color: dodgerblue;
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+      margin: 10px;
+    }
+
+    .b1 {
+      /* case where the variable is defined (background will be blue) */
+      background: var(--main-color, green);
+    }
+
+    .b2 {
+      /* case where the variable is not defined (background will be green by default) */
+      background: var(--not-exists-color, green);
+    }
+
+    .b3 {
+      /* case where the variable is redefined locally (background will be red and not blue or green) */
+      --main-color: crimson;
+      background: var(--main-color, green);
+    }
+  </style>
+</head>
+
+<body>
+  <h1>CSS custom properties - Basic use cases</h1>
+  <ul>
+    <li>case where the variable is defined</li>
+    <li>case where the variable is not defined</li>
+    <li>case where the variable is redefined locally in CSS</li>
+    <li>case where the variable is redefined globally in JS</li>
+  </ul>
+
+  <div class="box b1"></div>
+  <div class="box b2"></div>
+  <div class="box b3"></div>
+
+  <button class="btn">Switch theme</button>
+
+  <script type="text/javascript">
+    const btn = document.querySelector('.btn');
+
+    btn.addEventListener('click', () => {
+      /* case where the variable is redefined globally in JS */
+      document.documentElement.style.setProperty('--main-color', 'yellow');
+    });
+  </script>
+
+</body>
+
+</html>

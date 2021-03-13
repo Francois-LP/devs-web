@@ -1,0 +1,90 @@
+<!--
+Tutorial : https://blogs.infinitesquare.com/posts/web/css-vars-le-guide-complet
+Source : https://codepen.io/hamzaiqbal/pen/JLYoae
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="shortcut icon" href="#">
+  <style>
+    /* generic styles to all buttons having the ".btn" class */
+    .btn {
+      border: 0;
+      margin: 20px 0;
+      border-radius: var(--btn-corner, 3px);
+      background: var(--btn-bg, #194769);
+      color: var(--btn-color, #fff);
+      padding: var(--btn-padding, 10px 20px);
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .btn:hover {
+      cursor: pointer;
+      box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+      transition-duration: 0.4s;
+    }
+
+    .btn:active {
+      box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+        inset 2px 2px 3px rgba(0, 0, 0, .6);
+    }
+
+    .btn:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+
+    /* specific styles of the different types of buttons  */
+    .btn-success {
+      --btn-bg: #0e9577;
+    }
+
+    .btn-danger {
+      --btn-bg: #a40a3c;
+    }
+
+    .btn-lg {
+      --btn-corner: 6px;
+      --btn-padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>CSS custom properties - Theme of an element</h1>
+
+  <div style="text-align: center">
+    <button class="btn">Visualize</button><br />
+    <button class="btn btn-success">Validate</button><br />
+    <button class="btn btn-danger">Delete</button><br />
+    <button class="btn btn-lg btn-success">Validate (large version)</button>
+  </div>
+
+  <script type="text/javascript">
+    /* display alert or confirm on button clicked */
+    const btns = document.querySelectorAll('.btn');
+    btns.forEach(function (btn) {
+      btn.addEventListener('click', () => {
+        let msg = 'Button "' + btn.innerHTML + '" clicked !';
+        if (btn.classList.contains('btn-danger')) {
+          msg = 'Are you sure you want to take the action "' + btn.innerHTML + '" ?';
+          if (window.confirm(msg)) {
+            document.location.reload();
+          }
+        } else {
+          window.alert(msg);
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!--
+Tutorial : https://blogs.infinitesquare.com/posts/web/css-vars-le-guide-complet
+Source : https://codepen.io/hamzaiqbal/pen/JLYoMa
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="shortcut icon" href="#">
+  <style>
+    /* container style */
+    .container {
+      font-family: Arial;
+      color: #333;
+      font-size: 16px;
+      line-height: 1.6;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 40px;
+    }
+
+    /* generic styles of multiple element using variables from different themes  */
+    h2 {
+      color: var(--theme-color);
+      text-transform: uppercase;
+    }
+
+    blockquote {
+      border-left: 5px solid var(--theme-color);
+      padding: 0 0 0 20px;
+      margin: 20px 0;
+      font-style: italic;
+    }
+
+    .btn {
+      border: 0;
+      margin: 10px 0 0;
+      border-radius: 3px;
+      background: var(--theme-color);
+      color: #fff;
+      padding: 10px 20px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    /* specific styles of the different themes  */
+    .cat-sport {
+      --theme-color: #4A772F;
+    }
+
+    .cat-programming {
+      --theme-color: #005E7C;
+    }
+
+    .cat-culture {
+      --theme-color: #F5841A;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>CSS custom properties - Multiple element theme</h1>
+
+  <div class="container">
+    <div class="cat-sport">
+      <h2>Sport</h2>
+      <blockquote>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro ipsa nam eius sit reprehenderit! Blanditiis quas
+        et fugiat? Pariatur deleniti voluptate veritatis ipsa impedit illum odit quas doloremque corrupti quam.
+      </blockquote>
+      <button class="btn">Bouton</button>
+    </div>
+
+    <div class="cat-programming">
+      <h2>Programmation</h2>
+      <blockquote>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro ipsa nam eius sit reprehenderit! Blanditiis quas
+        et fugiat? Pariatur deleniti voluptate veritatis ipsa impedit illum odit quas doloremque corrupti quam.
+      </blockquote>
+      <button class="btn">Bouton</button>
+    </div>
+
+    <div class="cat-culture">
+      <h2>Culture</h2>
+      <blockquote>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro ipsa nam eius sit reprehenderit! Blanditiis quas
+        et fugiat? Pariatur deleniti voluptate veritatis ipsa impedit illum odit quas doloremque corrupti quam.
+      </blockquote>
+      <button class="btn">Bouton</button>
+    </div>
+  </div>
+
+</body>
+
+</html>
